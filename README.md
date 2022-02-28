@@ -1,7 +1,7 @@
 # Algorithm_study
 *소웨 친구들의 알고리즘 스터디*
 ## 참여자
-[김수연](www.github.com/yeoneeds), [나여주](www.github.com/yeojoo1224), [이지언](www.github.com/easyearn)
+김수연, 나여주, 이지언
 
 ## 스터디 규칙
 | 번호 | 내용|
