@@ -39,7 +39,7 @@ print(a+b+c+d, "개")
 
 ## 실전문제 1: 큰수의 법칙
 sol1) 부족했던 부분: 
-1. `num=list(map(int,input().split()` => list 사용하는거 몰랐음, 배열 형태로 만들기 위해서 list 사용하기!
+1. `num=list(map(int,input().split())` => list 사용하는거 몰랐음, 배열 형태로 만들기 위해서 list 사용하기!
 2. m-=1 잘  이용하기
 3. 그리디- 정렬 거의 세트로 생각해두기!-> sort()함수가 min,max보다 시간 더 오래걸리는것두 생각하기  
 
