@@ -7,6 +7,7 @@ while(True):
     #N이 K보다 작을 경우, -1만 남음
     if N<K:
         break
+    
     #N이 K의 배수가 될 때 까지 -1하는 회수
     mul=(N//K)*K
     cnt+=N-mul
@@ -14,7 +15,8 @@ while(True):
 
     #N//K 
     while(N%K==0):
-        N/=K
+        N//=K
         cnt+=1
-        
+
+cnt+=(N-1)
 print(cnt)
