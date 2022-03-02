@@ -6,4 +6,3 @@ for i in range(N):
     data.append(min(map(int,sys.stdin.readline().split()))) #행 중 가장 작은 수만 저장
 
 print(max(data)) #가장 큰 수 선택
-
