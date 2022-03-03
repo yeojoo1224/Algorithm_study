@@ -3,7 +3,7 @@ def solution(food_times, k):
     length = len(food_times)
     answer = 1
 
-    if k>=sum((food_times[v]) for v in range(length)): return -1
+    if k>=sum(food_times): return -1
 
     while k>0: 
         for i in range(length):
