@@ -18,10 +18,7 @@ def solution(food_times, k):
                 if sum(food_times)==0:
                     return -1
                 elif k==0:
-                    break
-
-    
-    return(answer)
+                    return(answer)
 
 #f_times = list(map(int, input().split()))
 #a = int(input())
