@@ -6,7 +6,7 @@ result = 0
 
 #문자열 길이 
 for i in range(len(num)): 
-    if result==0 or (int(num[i]))==0:
+    if result==0 or (int(num[i]))==0 or (int(num[i]))==1:
         result += int(num[i])
     else:
         result*=int(num[i])
