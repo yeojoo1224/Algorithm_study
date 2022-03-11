@@ -9,7 +9,7 @@ for _ in range(m): #간선 입력
 def bfs(x,graph):
     queue=deque() #queue생성
     visit=[0]*(n+1) 
-    cnt=[0]*n
+    cnt=[0]*(n+1) #노드별 x와의 거리 저장
     answer=[]
     #초기 위치 저장
     queue.append(x)
@@ -17,12 +17,12 @@ def bfs(x,graph):
     #bfs탐색
     while queue:
         node=queue.popleft()
-        for i in graph[node]:
-            if visit[i]==0:
+        for i in graph[node]: #pop한 node와 연결된 node탐색
+            if visit[i]==0: #연결된 노드가 방문한 적 없다면,
                 queue.append(i)
                 visit[i]=1
-                cnt[i]=cnt[node]+1
-                if cnt[i]==k:
+                cnt[i]=cnt[node]+1 #거리 저장
+                if cnt[i]==k: #해당 거리가 k라면
                     answer.append(i)
     return answer
 
