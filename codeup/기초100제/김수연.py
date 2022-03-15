@@ -574,4 +574,127 @@ a,r,n = map(int, input().split())
 
 print(a*r**(n-1))
 
+#6090
+a,m,d,n = map(int, input().split())
 
+sum = 0
+
+if m==1:
+  sum = a+(n-1)*d
+else:
+  sum = (m**(n-1)*a)+(((m**(n-1)-1)//(m-1))*d)
+
+print(sum)
+
+#6090_ver2
+a,m,d,n = map(int, input().split())
+
+for i in range(1,n):
+  a = a*m+d
+
+print(a)
+
+#6091
+a,b,c = map(int, input().split())
+d =1
+
+while d%a!=0 or d%b!=0 or d%c!=0:
+  d+=1
+
+print(d)
+
+#6092 출석 번호를 n번 무작위로 불렀을 때, 각 번호(1 ~ 23)가 불린 횟수를 각각 출력해보자.
+
+n = int(input())
+s = list(map(int, input().split()))
+
+count =[]
+
+for i in range(24):
+  count.append(0)
+
+for i in range(n):
+  count[s[i]]+=1
+
+for i in range(23):
+  print(count[i+1],end=' ')
+#답지는 range(1,24)를 사용했다.
+
+#6093 출석 번호를 n번 무작위로 불렀을 때, 부른 번호를 거꾸로 출력해 보자.
+#발상: n의 범위를 꼼꼼하게 파악하지 않았다. -> 다음부터는 for 문에 들어가는 인자와 for문 안에 실행되는 단계 꼼꼼하게 보기!
+n = int(input())
+s = list(map(int, input().split()))
+
+for i in range(n):
+  print(s[n-i-1], end=' ')
+  
+#6093_ver2
+n = int(input())
+s = list(map(int, input().split()))
+
+for i in range(n-1, -1, -1):
+  print(s[i], end=' ')
+  
+#6094 출석 부른 번호 중에 가장 빠른 번호 찾기
+n = int(input()) #n개의 랜덤번호
+k = list(map(int,input().split())) #랜덤번호 k의 집합
+
+k_min = min(k)
+
+print(k_min)
+
+#6095
+#오리지날 바둑판 생성
+d = []
+for i in range(20):
+  d.append([]) #리스트 안에 다른 리스트 추가해넣기
+  for j in range(20):
+    d[i].append(0) #리스트안의 리스트에 0을 추가
+
+n = int(input())
+for i in range(n):
+  x,y = map(int, input().split())
+  d[x][y]= 1
+
+
+for i in range(1,20):
+  for j in range(1,20):
+    print(d[i][j], end=' ')
+  print()
+
+#6096 십자 뒤집기
+
+#먼저 19 *19 리스트 입력받기
+
+origin = []
+
+for i in range(19):
+  origin.append(list(map(int, input().split())))
+
+#십자 뒤집기 횟수 입력
+n = int(input())
+
+for k in range(n):
+    x,y = map(int, input().split())
+
+    for j in range(19):
+        if j==y-1:
+            continue
+        else:
+            if origin[x-1][j]==0:
+                origin[x-1][j]=1
+            else:
+                origin[x-1][j]=0
+    
+    for i in range(19):
+        if i==x-1: continue
+        else:
+            if origin[i][y-1]==0:
+                origin[i][y-1]=1
+            else:
+                origin[i][y-1]=0
+
+for i in range(19):
+    for j in range(19):
+        print(origin[i][j], end=' ')
+    print()
