@@ -698,3 +698,30 @@ for i in range(19):
     for j in range(19):
         print(origin[i][j], end=' ')
     print()
+    
+#6097
+h,w = map(int,input().split())
+n = int(input())
+
+#일단 판 먼저 만들기
+pan = [[0] * (w+1) for _ in range(h+1)]
+
+for i in range(n):
+  l,d,x,y = map(int, input().split()) #길이, 방향(가로:0, 세로:1), 좌표 xy
+
+  if d==0: #가로 막대면 열이 증가
+    dx=x
+    dy =y+l-1
+  else:
+    dx=x+l-1
+    dy=y #세로 막대면 행이 증가
+
+  if dx>=1 and dx<=h and dy>=1 and dy<=w: #더한 좌표가 판 범위 이내일 때
+    for i in range(x,dx+1):
+      for j in range(y,dy+1):
+        pan[i][j] =1 #처음범위부터 추가된 범위까지 색칠
+        
+for i in range(1,h+1):
+    for j in range(1,w+1):
+        print(pan[i][j], end=' ')
+    print()
