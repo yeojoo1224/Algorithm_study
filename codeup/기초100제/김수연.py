@@ -725,3 +725,27 @@ for i in range(1,h+1):
     for j in range(1,w+1):
         print(pan[i][j], end=' ')
     print()
+
+#6098
+miro=[]
+for i in range(10):
+    miro.append(list(map(int, input().split()))) #miro information input
+tmp=1
+
+for i in range(1,10):
+    for j in range(tmp,10):
+        if miro[i][j]==1:
+            tmp = j-1
+            break #j break, i comeback
+        elif miro[i][j]==2:#break and break
+            break
+        else:
+            miro[i][j]=9        
+    if miro[i][j]==2:
+        miro[i][j]=9
+        break
+ 
+for i in range(10):
+    for j in range(10):
+        print(miro[i][j],end=' ')
+    print()
