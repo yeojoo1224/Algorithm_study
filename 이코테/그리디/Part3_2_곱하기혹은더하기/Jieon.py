@@ -1,3 +1,4 @@
+'''
 import sys
 
 S=str(sys.stdin.readline())
@@ -9,5 +10,17 @@ for i in range(1,len(S)-1):
         result+=int(S[i])
     else:
         result*=int(S[i])
+
+print(result)
+'''
+
+data=str(input())
+result=int(data[0])
+for i in range(1,len(data)):
+    tmp=int(data[i])
+    if result<=1 or tmp<=1:
+        result+=tmp
+    else:
+        result*=tmp
 
 print(result)
