@@ -1,3 +1,4 @@
+'''
 import time
 #data 입력
 N,K=map(int,input().split())
@@ -19,4 +20,20 @@ while(True):
         cnt+=1
 
 cnt+=(N-1)
+print(cnt)
+'''
+#복습
+n,k=map(int,input().split())
+cnt=0
+while n>1:
+    if n%k==0:
+        n=n//k
+        cnt+=1
+    elif n>k:
+        cnt+=(n%k)
+        n-=n%k
+    else:
+        cnt+=n-1
+        n=1
+
 print(cnt)

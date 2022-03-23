@@ -1,3 +1,4 @@
+'''
 #가장 작은 뭉텅이 개수만큼 뒤집으면 된다. 0101101 -->3
 import sys
 
@@ -12,4 +13,15 @@ for i in range(len(S)-1):
         cnt[num]+=1
     last=num #최근 뭉탱이 수 업데이트
 
-print(min(cnt)) #가장 작은 뭉탱이 반복 회수 출력
+print(min(cnt)) #가장 작은 뭉탱이 반복 회수 출력'''
+
+s=str(input())
+cnt=[0,0]
+last=int(s[0])
+cnt[last]+=1
+for i in range(1,len(s)):
+    if last!=int(s[i]):
+        last=int(s[i])
+        cnt[last]+=1
+
+print(min(cnt))
