@@ -35,17 +35,43 @@ def solution(food_times, k):
     pre_food = 0
     flag = True
     while flag:
-        if not pq:
+        if not pq: #더 섭취할 음식이 없는 경우
             return -1
-        length = len(pq)
-        time += (pq[0][0] - pre_food) * length
-        if time > k:
-            time -= (pq[0][0] - pre_food) * length
-            while pq:
+        length = len(pq) #남은 음식의 개수
+        time += (pq[0][0] - pre_food) * length #가장 시간이 작은 음식만큼 회전 돌기
+        if time > k: #현재 시간이 k보다 클 경우, k이후 끝나는 지점을 탐색해야 함.
+            time -= (pq[0][0] - pre_food) * length #시간을 k보다 작은 시간으로 되돌리기.
+            while pq: #남은 음식 번호 넣기 (음식 번호 순으로 먹기 때문)
                 answer_rs.append(heapq.heappop(pq)[1])
             answer_rs.sort()
-            answer = answer_rs[(k - time) % length]
-            flag = False
+            answer = answer_rs[(k - time) % length] #남은 시간을 통해 정답 구하기
+            flag = False #return
         else:
-            pre_food = heapq.heappop(pq)[0]
+            pre_food = heapq.heappop(pq)[0] #시간이 k보다 작으면, 회전 돌고, 다 먹은 음식 빼기
     return answer
+
+    #복습
+    def solution(food_times,k):
+        pq=[]
+        for i in range(len(food_times)):
+            heapq.heappush(pq,[food_times[i],i+1])
+        
+        Flag=True
+        time=0
+        last=0
+        last_foods=[]
+        while Flag:
+            if not pq: 
+                return -1
+            length=len(pq)
+            time+=(pq[0][0]-last)*length
+            if time>k:
+                time-=(pq[0][0]-last)*length
+                while pq:
+                    last_foods.append(heapq.heappop(pq)[1])
+                last_foods.sort()
+                answer=last_foods[(k-time)%length]
+                Flag=False
+            else:
+                last=heapq.heappop(pq)[0]
+        return answer
