@@ -1,4 +1,4 @@
-import sys
+'''import sys
 n,m=map(int,sys.stdin.readline().split())
 a,b,d=map(int,sys.stdin.readline().split())
 data=[]
@@ -39,4 +39,56 @@ while(True):
         print('error')
         break
 
-print(result)
+print(result)'''
+
+#복습
+#데이터 받기
+n,m=map(int,input().split())
+x,y,d=map(int,input().split())
+point=[x,y,d]
+graph=[]
+for i in range(n):
+    graph.append(list(map(int,input().split())))
+
+def rotate(point):
+    left_d=[3,0,1,2]
+    next_d=left_d[point[2]]
+    point[2]=next_d
+    return point
+
+next=[(-1,0),(0,1),(1,0),(0,-1)]
+back=[(1,0),(0,-1),(-1,0),(0,1)]
+
+flag=True
+cnt=1
+answer=1
+graph[point[0]][point[1]]=2
+point=rotate(point)
+
+while flag:
+    dx=next[point[2]][0]
+    dy=next[point[2]][1]
+    next_p=(point[0]+dx,point[1]+dy)
+    if 0<=next_p[0]<n and 0<=next_p[1]<m:
+        if graph[next_p[0]][next_p[1]]==0:
+            cnt=0
+            point=[next_p[0],next_p[1],point[2]]
+            graph[next_p[0]][next_p[1]]=2
+            answer+=1
+        else:
+            point=rotate(point)
+            cnt+=1
+        if cnt==4:
+            bx=point[0]+next[point[2]][0]
+            by=point[1]+next[point[2]][1]
+            if graph[bx][by]==1:
+                flag=False
+            else:
+                cnt=0
+                point=[bx,by,point[2]]
+
+print(answer)
+
+        
+
+            
