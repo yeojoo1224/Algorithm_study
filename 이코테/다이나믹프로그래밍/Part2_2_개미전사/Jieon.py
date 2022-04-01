@@ -15,4 +15,4 @@ dpt[1]=max(data[0],data[1])
 for i in range(2,N):
     dpt[i]=max(data[i-1],data[i-2]+data[i])
 
-print(dpt[n-1])
+print(dpt[N-1])
