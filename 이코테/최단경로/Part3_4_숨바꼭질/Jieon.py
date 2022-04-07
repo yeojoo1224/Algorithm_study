@@ -35,3 +35,5 @@ for i in range(2,n+1):
         cnt=1
 
 print(answer_i,max_d,cnt, end=' ')
+
+#답지안봄
