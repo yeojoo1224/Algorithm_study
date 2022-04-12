@@ -5,7 +5,7 @@ def find_root(parents,a):
     return parents[a]
 
 def union(parents,a,b):
-    ra=find_root(parents,a)
+    ra=find_root(parents,a) #이 부분 실수하지 말기!!!
     rb=find_root(parents,b)
     if ra>rb:
         parents[ra]=rb
@@ -33,3 +33,5 @@ for edge in edges:
         last=c
 
 print(cost-last)
+
+#답지 일부 참조
