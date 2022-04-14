@@ -15,6 +15,9 @@ def union(parent,a,b):
 n,m=map(int,input().split())
 parent=[0]*n
 for i in range(n):
+    parent[i]=i
+    
+for i in range(n):
     l=list(map(int,input().split()))
     for j in range(i+1,n):
         if l[j]==1:
