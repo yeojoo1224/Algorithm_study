@@ -14,8 +14,8 @@ def union(parent,a,b):
 g=int(input())
 p=int(input())
 
-parent=[0]*(n+1)
-for i in range(1,n+1):
+parent=[0]*(g+1)
+for i in range(1,g+1):
     parent[i]=i
 
 result=0
