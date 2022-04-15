@@ -34,3 +34,5 @@ for edge in edges:
         active_cost+=z
 
 print(total_cost-active_cost)
+
+#답지 안봄
