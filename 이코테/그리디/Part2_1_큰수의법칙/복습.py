@@ -32,3 +32,5 @@ cnt=m//(k+1)
 cnt_r=m%(k+1)
 answer=(num1*k+num2)*cnt+num1*cnt_r
 print(answer)
+
+#navigator: 여주, driver:지언
