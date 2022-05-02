@@ -11,3 +11,5 @@ for h in range(0,n+1):
 #     3-1) 시,분,초 안에 3이 포함되면 count 1 증가
 # 4. count출력
 print(count)
+
+#nav: 여주 // driver: 지언
