@@ -19,14 +19,14 @@ for _ in range(test):
     #올해 변경된 순위정보 입력
     m=int(input())
     for _ in range(m):
-        a,b=map(int,input().split())
+        a,b=map(int,input().split()) #a,b의 등수가 작년과 바뀜
         #간선방향 뒤집기
-        if graph[a][b]:
-            graph[a][b]=False
+        if graph[a][b]: #작년에 a>b, 올해 b>a
+            graph[a][b]=False 
             graph[b][a]=True
             indegree[a]+=1
             indegree[b]-=1
-        else:
+        else: #작년에 b>a, 올해 a>b
             graph[a][b]=True
             graph[b][a]=False
             indegree[a]-=1
